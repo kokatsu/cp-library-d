@@ -1,0 +1,11 @@
+{
+	"authors": [
+		"kokatsu"
+	],
+	"description": "D programming language library for competitive programming",
+	"license": "Creative Commons Zero v1.0 Universal",
+	"name": "cp-library-d",
+	"targetType": "library",
+	"importPaths": ["src"],
+	"sourcePaths": ["src"]
+}
