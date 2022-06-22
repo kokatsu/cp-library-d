@@ -1,4 +1,6 @@
 .DS_Store
 .devcontainer
+.dub
 
 dub.selections.json
+cp-library-d-test-library
