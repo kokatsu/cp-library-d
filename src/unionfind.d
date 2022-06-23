@@ -1,7 +1,9 @@
 import std.algorithm;
+import std.traits;
 
 /// Union-Find
-struct UnionFind(T) {
+struct UnionFind(T)
+if (isIntegral!T) {
 
     /// Constructor
     this(T n) {
