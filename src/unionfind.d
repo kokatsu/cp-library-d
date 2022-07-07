@@ -6,7 +6,7 @@ struct UnionFind(T)
 if (isIntegral!T) {
 
     /// Constructor
-    this(T n) {
+    this(T n) nothrow @safe {
         len = n;
         par.length = len;
         cnt.length = len;
@@ -17,7 +17,7 @@ if (isIntegral!T) {
     }
 
     /// Returns the root of x.
-    T root(T x)
+    T root(T x) nothrow @nogc @safe
     in (0 <= x && x < len) {
         if (par[x] == x) {
             return x;
@@ -28,13 +28,13 @@ if (isIntegral!T) {
     }
 
     /// Returns whether x and y have the same root.
-    bool isSame(T x, T y)
+    bool isSame(T x, T y) nothrow @nogc @safe
     in (0 <= x && x < len && 0 <= y && y < len) {
         return root(x) == root(y);
     }
 
     /// Unites x tree and y tree.
-    void unite(T x, T y)
+    void unite(T x, T y) nothrow @nogc @safe
     in (0 <= x && x < len && 0 <= y && y < len) {
         x = root(x), y = root(y);
         if (x == y) {
@@ -50,7 +50,7 @@ if (isIntegral!T) {
     }
 
     /// Returns the size of the x tree.
-    T size(T x)
+    T size(T x) nothrow @nogc @safe
     in (0 <= x && x < len) {
         return cnt[root(x)];
     }
