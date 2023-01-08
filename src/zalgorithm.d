@@ -5,8 +5,10 @@ import std.traits;
 /// Z algorithm
 int[] zAlgorithm(T)(T x)
 if (isArray!T) {
-    int len = x.length.to!int, j;
+    int len = x.length.to!int;
+    if (len == 0) return [];
 
+    int j;
     auto z = new int[](len);
     foreach (i; 1 .. len) {
         z[i] = (i - j < z[j] ? min(j+z[j]-i, z[i-j]) : 0);
